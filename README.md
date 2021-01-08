@@ -19,6 +19,8 @@ You need the following libraries to compile and run the program:
 Run "qmake", which generates a Makefile and "make" to compile
 everything.
 
+
+
 ## MacOS packages
 
 Add these two taps
@@ -36,6 +38,13 @@ brew install attys-ecg
 
 
 ## Windows
+
+### Installer
+
+<a href="http://www.attys.tech/download/attys-ecg-installer.msi">attys-ecg-installer.msi</a>
+
+### Compilation from source
+
 * Install: Visual Studio 2017 community edition
 * clone iir1 in your root directory: https://github.com/berndporr/iir1 and compile it (release and debug version)
 * clone fir1 in your root directory: https://github.com/berndporr/fir1 and compile it (release and debug version)
