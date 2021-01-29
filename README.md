@@ -23,6 +23,12 @@ everything.
 
 ## MacOS packages
 
+### DMG
+
+Download `attys-ecg.dmg` and drop its contents in the applications folder.
+
+### Homebrew
+
 Install homebrew: https://brew.sh/
 
 Add these two taps
