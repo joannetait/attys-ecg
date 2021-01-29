@@ -71,7 +71,7 @@ brew install attys-ecg
 
 # Running attys-ecg
 
-Just type: "./attys-ecg" or start it from the start menu under Windows.
+Just type: "attys-ecg" or start it from the applications menu.
 
 # Electrode placement
 
