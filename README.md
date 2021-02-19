@@ -7,7 +7,16 @@ for Windows/Linux
 
 # Installation
 
-## Linux
+## Linux Ubuntu packages for xenial and bionic
+Add these two repositories...
+```
+sudo add-apt-repository ppa:berndporr/attys
+sudo add-apt-repository ppa:berndporr/dsp
+```
+...and then select `attys-ecg` in your favourite package manager. This will then install also
+the other required packages.
+
+## Compilation from source
 
 You need the following libraries to compile and run the program:
 
@@ -18,7 +27,6 @@ You need the following libraries to compile and run the program:
 
 Run "qmake", which generates a Makefile and "make" to compile
 everything.
-
 
 
 ## MacOS packages
@@ -49,7 +57,7 @@ brew install attys-ecg
 
 ### Installer
 
-<a href="http://www.attys.tech/download/attys-ecg-installer.msi">attys-ecg-installer.msi</a>
+<a href="https://github.com/glasgowneuro/attys-ecg/blob/master/installer/Release/attys-ecg-installer.msi">attys-ecg-installer.msi</a>
 
 ### Compilation from source
 
