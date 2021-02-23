@@ -83,6 +83,10 @@ Just type: "attys-ecg" or start it from the applications menu.
 
 # Electrode placement
 
+  * "+" : left ankle or hip
+  * "-" : right shoulder or wrist
+  * GND : left shoulder or wrist
+
 ![alt tag](wiring.jpg)
 
 # Viewing and printing the ECG
