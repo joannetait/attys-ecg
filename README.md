@@ -83,7 +83,7 @@ Just type: "attys-ecg" or start it from the applications menu.
 
 # Electrode placement
 
-![alt tag](electrode_placement.png)
+![alt tag](wiring.jpg)
 
 # Viewing and printing the ECG
 
