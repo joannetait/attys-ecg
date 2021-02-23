@@ -85,6 +85,13 @@ Just type: "attys-ecg" or start it from the applications menu.
 
 ![alt tag](electrode_placement.png)
 
+# Viewing and printing the ECG
+
+Click on the screenshot to enter the ECG viewer at https://glasgowneuro.github.io/AttysECG/.
+
+[![alt tag](plotter.png)](https://glasgowneuro.github.io/AttysECG/)
+
+
 # Heartrate detection
 [https://github.com/glasgowneuro/attys-ecg/blob/master/ecg_rr_det.cpp]
 
