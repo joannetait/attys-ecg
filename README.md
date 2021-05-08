@@ -21,24 +21,6 @@ everything.
 
 
 
-## MacOS packages
-
-Install homebrew: https://brew.sh/
-
-Add these two taps
-
-```
-brew tap berndporr/dsp
-brew tap glasgowneuro/attys
-```
-
-and install attys-ecg
-
-```
-brew install attys-ecg
-```
-
-
 ## Windows
 
 ### Installer
