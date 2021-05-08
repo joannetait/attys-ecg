@@ -7,7 +7,16 @@ for Windows/Linux
 
 # Installation
 
-## Linux
+## Linux Ubuntu packages for xenial and bionic
+Add these two repositories...
+```
+sudo add-apt-repository ppa:berndporr/attys
+sudo add-apt-repository ppa:berndporr/dsp
+```
+...and then select `attys-ecg` in your favourite package manager. This will then install also
+the other required packages.
+
+## Compilation from source
 
 You need the following libraries to compile and run the program:
 
@@ -20,12 +29,11 @@ Run "qmake", which generates a Makefile and "make" to compile
 everything.
 
 
-
 ## Windows
 
 ### Installer
 
-<a href="http://www.attys.tech/download/attys-ecg-installer.msi">attys-ecg-installer.msi</a>
+<a href="https://github.com/glasgowneuro/attys-ecg/blob/master/installer/Release/attys-ecg-installer.msi">attys-ecg-installer.msi</a>
 
 ### Compilation from source
 
@@ -47,11 +55,22 @@ everything.
 
 # Running attys-ecg
 
-Just type: "./attys-ecg" or start it from the start menu under Windows.
+Just type: "attys-ecg" or start it from the applications menu.
 
 # Electrode placement
 
-![alt tag](electrode_placement.png)
+  * "+" : left ankle or hip
+  * "-" : right shoulder or wrist
+  * GND : left shoulder or wrist
+
+![alt tag](wiring.jpg)
+
+# Viewing and printing the ECG
+
+Click on the screenshot to enter the ECG viewer at https://glasgowneuro.github.io/AttysECG/.
+
+[![alt tag](plotter.png)](https://glasgowneuro.github.io/AttysECG/)
+
 
 # Heartrate detection
 [https://github.com/glasgowneuro/attys-ecg/blob/master/ecg_rr_det.cpp]
