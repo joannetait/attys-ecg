@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/attys-ecg.dir/main.cpp.o  -o attys-ecg 
