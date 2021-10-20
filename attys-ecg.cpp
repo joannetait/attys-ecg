@@ -113,7 +113,8 @@ MainWindow::MainWindow(QWidget *parent) :
 	QDesktopWidget *mydesktop = QApplication::desktop();
 	int h = mydesktop->height() / 5;
 	int w = mydesktop->width();
-	dataPlotI = new DataPlot(maxTime,
+
+	/* dataPlotI = new DataPlot(maxTime,
 		sampling_rate,
 		minRange,
 		maxRange,
@@ -150,7 +151,7 @@ MainWindow::MainWindow(QWidget *parent) :
 	dataPlotIII->setMaximumSize(w, h);
 	dataPlotIII->setStyleSheet(styleSheet);
 	plotLayout->addWidget(dataPlotIII);
-	dataPlotIII->show();
+	dataPlotIII->show(); */
 
 	dataPlotBPM = new DataPlot(120,
 		1,
@@ -364,9 +365,9 @@ void MainWindow::slotSelectYrange(int r) {
 		y = 2.0;
 		break;
 	}
-	dataPlotI->setYScale(-y, y);
+	/*dataPlotI->setYScale(-y, y);
 	dataPlotII->setYScale(-y, y);
-	dataPlotIII->setYScale(-y, y);
+	dataPlotIII->setYScale(-y, y); */
 }
 
 void MainWindow::slotClearBPM()
@@ -397,9 +398,9 @@ void MainWindow::slotRecordECG()
 }
 
 void MainWindow::timerEvent(QTimerEvent *) {
-	dataPlotI->replot();
+/*	dataPlotI->replot();
 	dataPlotII->replot();
-	dataPlotIII->replot();
+	dataPlotIII->replot(); */
 	dataPlotBPM->replot();
 	dataPlotAccX->replot();
 	dataPlotAccY->replot();
@@ -486,9 +487,9 @@ void MainWindow::hasData(double t, float *sample)
 
 	// plot the data
 	const double scaling = 1000;
-	dataPlotI->setNewData(I*scaling);
+	/*dataPlotI->setNewData(I*scaling);
 	dataPlotII->setNewData(II*scaling);
-	dataPlotIII->setNewData(III*scaling);
+	dataPlotIII->setNewData(III*scaling);*/
 
 	dataPlotAccX->setNewData(accX);
 	dataPlotAccY->setNewData(accY);
