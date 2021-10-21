@@ -23,7 +23,7 @@
 #include <QDesktopWidget>
 #include <QMessageBox>
 
-#include "AttysComm.h"
+#include "AttysComm.h" //are these on github??
 #include "AttysScan.h"
 
 #define NOTCH_BW 2.5
@@ -542,7 +542,9 @@ void  MainWindow::hasRpeak(ECG_rr_det* det,
 		}
 	}
 	bpm = newBpm;
-	dataPlotBPM->setNewData(bpm);
+	// todo put the bpm into hrv function with this rather than one//
+	dataPlotBPM->setNewData(bpm); 
+
 	char tmp[16];
 	sprintf(tmp,"%03d/%d BPM",(int)bpm,rr_det_channel);
 	if (ecgFile && (recordECG->isChecked())) {
