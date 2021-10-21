@@ -10,6 +10,9 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
+
+
+//TODO ANIMATIONS HERE//
 #ifndef ATTYS_ECG
 #define ATTYS_ECG
 
@@ -33,6 +36,7 @@
 #include <Fir1.h>
 
 #define IIRORDER 2
+
 
 // LMS coefficients
 #define HP_CUTOFF 0.25
@@ -59,7 +63,10 @@ class MainWindow : public QWidget
 
   double I,II,III;
   double aVR,aVL,aVF;
+
   double bpm;
+  
+
 
   double accX, accY, accZ;
   

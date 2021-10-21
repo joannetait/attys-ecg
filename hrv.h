@@ -3,7 +3,7 @@
 #define BUFFERLENGTH 3
 
 double bpmBuffer[BUFFERLENGTH] = {0};
-
+//public private etccccc
 double hrv;
 double currentVal;
 double lastVal;

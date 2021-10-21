@@ -22,7 +22,7 @@
 class DataPlot : public QwtPlot
 {
 private:
-	// internal databuffer
+	// internal databuffer 
 	double* xData;
 	double* yData;
 	
@@ -45,6 +45,8 @@ private:
 	
 public:
 	// constructor
+	
+
 	DataPlot(double _maxtime,
 		 double _samplingRate,
 		 double _minY,
