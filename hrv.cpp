@@ -1,4 +1,4 @@
-// TODO PUT THIS CLASS SOMEWHERE IT MAKES SENSE!!! PROBS MAINWINDOW//
+/*
 
 #include "attys-ecg.h"
 

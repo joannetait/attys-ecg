@@ -58,6 +58,8 @@ class MainWindow : public QWidget
   DataPlot *dataPlotAccY;
   DataPlot *dataPlotAccZ;
 
+  HRV *HRV;
+
   double minAcc;
   double maxAcc;
 
@@ -65,6 +67,8 @@ class MainWindow : public QWidget
   double aVR,aVL,aVF;
 
   double bpm;
+  double prevbpm;
+  double hrv; 
   
 
 
@@ -76,7 +80,7 @@ class MainWindow : public QWidget
   // time counter
   long unsigned int sampleNumber = 0;
 
-  Iir::Butterworth::BandStop<IIRORDER> iirnotch1;
+  Iir::Butterworth::BandStop<IIRORDER> iirnotch1hasRpeak;
   Iir::Butterworth::HighPass<IIRORDER> iirhp1;
 
   Iir::Butterworth::BandStop<IIRORDER> iirnotch2;

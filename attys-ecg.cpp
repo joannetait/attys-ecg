@@ -542,13 +542,17 @@ void  MainWindow::hasRpeak(ECG_rr_det* det,
 		}
 	}
 	bpm = newBpm;
-	dataPlotBPM->setNewData(bpm); 
 
-	bpmBuffer[2] = bpmBuffer[1]; //todo put into function
-	bpmBuffer[1] = bpmBuffer[0];
-	bpmBuffer[0] = bpm;
-	//todo hrv detection
-	//todo peak detection
+	dataPlotBPM->setNewData(bpm); 
+	
+	hrv = bpm - prevbpm;
+
+	 if (hrv<0){     //will complier optimise this or should i change sign bit in here??
+        hrv = hrv* (-1);
+    }
+	//display bpm
+	//use hrv as coefficient for animation
+	prevbpm = bpm; 
 
 	char tmp[16];
 	sprintf(tmp,"%03d/%d BPM",(int)bpm,rr_det_channel);

@@ -1,4 +1,4 @@
-#include "attys-ecg.h"
+/* #include "attys-ecg.h"
 
 #define BUFFERLENGTH 3
 
@@ -21,13 +21,13 @@ void addBPM(double bpm){
     bpmBuffer[0]=bpm;
 }
 //difference between last two bpm 
-void instHRV(){
+void instHRV(double bpm){
 
     currentVal = bpmBuffer[BUFFERLENGTH-1];
     lastVal = ;
     hrv = currentVal - lastVal;
 
-    if (hrv<0){         //ask what's quickest
+    if (hrv<0){         //ask what's quickest. Just make 1st bit 0? How many bits is in a double lol
         hrv = hrv* (-1);
     }
 
