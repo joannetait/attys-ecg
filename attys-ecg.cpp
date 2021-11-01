@@ -168,9 +168,9 @@ MainWindow::MainWindow(QWidget *parent) :
 		sampling_rate,
 		minRange,
 		maxRange,
-		"Einthoven III",
+		"ECG",
 		xlabel,
-		"III/mV",
+		"ECG/mV",
 		this);
 	dataPlotIII->setMaximumSize(w, h);
 	dataPlotIII->setStyleSheet(styleSheet);
@@ -477,7 +477,6 @@ void MainWindow::slotSTART()
 
 void MainWindow::slotSTARTmanifest()
 {   
-	dataPlotIII->hide();
 	manifest->show();
 }
 
