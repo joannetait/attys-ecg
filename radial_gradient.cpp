@@ -96,7 +96,6 @@ void RadialGradient::doPainting() {
 void RadialGradient::getRadius(int BPM) {
 
     radius = BPM;
-    printf("radius.cpp\n");
     update();
     
 }

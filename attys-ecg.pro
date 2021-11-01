@@ -37,6 +37,8 @@ QT             	+= widgets
 
 RESOURCES     = application.qrc
 
+TARGET = attys_ecg_breathe
+
 target.path     = /usr/local/bin
 INSTALLS        += target
 

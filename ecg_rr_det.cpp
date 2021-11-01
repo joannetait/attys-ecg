@@ -108,7 +108,6 @@ void ECG_rr_det::detect(float v) {
 							}
 						}
 						prevBPM = bpm;
-					//	printf("BMP RRDET.cpp:%f",bpm);
 					}
 				}
 			} else {

@@ -77,8 +77,8 @@ class RadialGradient : public QWidget {
     void getRadius(int BPM){
       setNewData(BPM);
       radius = BPMData[length-1];
-      printf("radius=%d\n",radius);
-      update();
+     // printf("radius=%d\n",radius);
+     // update();
       };
 
   protected:
