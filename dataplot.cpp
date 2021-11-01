@@ -52,6 +52,7 @@ void DataPlot::reset() {
 }
 
 void DataPlot::setNewData(double yNew) {
+	//printf("YNew %lf \n",yNew);
 	memmove( yData, yData+1, (length - 1) * sizeof(yData[0]) );
 	yData[length-1] = yNew;
 }

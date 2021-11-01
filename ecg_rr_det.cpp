@@ -65,7 +65,7 @@ void ECG_rr_det::reset() {
 // detect r peaks
 // input: ECG samples at the specified sampling rate and in V
 void ECG_rr_det::detect(float v) {
-	double h = 1000 * v;
+	double h = 1000 * (double) v;
 	h = ecgDetector->filter(h);
 	if (ignoreECGdetector > 0) {
 		ignoreECGdetector--;
@@ -89,6 +89,7 @@ void ECG_rr_det::detect(float v) {
 	} else {
 		double threshold = threshold_factor * amplitude;
 		if (h > threshold) {
+
 			float t = (timestamp - t2) / samplingRateInHz;
 			float bpm = 1 / t * 60;
 			if ((bpm > 30) && (bpm < 250)) {
@@ -101,11 +102,13 @@ void ECG_rr_det::detect(float v) {
 						} else {
 							if (rrListener != NULL) {
 								rrListener->hasRpeak(timestamp,
+											 t,
 										     bpm,
 										     amplitude, h / threshold);
 							}
 						}
 						prevBPM = bpm;
+					//	printf("BMP RRDET.cpp:%f",bpm);
 					}
 				}
 			} else {

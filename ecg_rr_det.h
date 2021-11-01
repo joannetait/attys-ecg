@@ -32,6 +32,7 @@ private:
     // previous timestamp
     long t2 = 0;
 
+
     // previously detected heartrate
     float prevBPM = 0;
 
@@ -67,6 +68,7 @@ public:
     class RRlistener {
     public:
 	    virtual void hasRpeak(long samplenumber,
+                  float t,
 				  float bpm,
 				  double amplitude,
 				  double confidence) = 0;

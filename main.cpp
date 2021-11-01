@@ -28,17 +28,19 @@ int main(int argc, char **argv)
 
   // see if we have any Attys!
   int ret = attysScan.scan(1);
-  
+  printf("Scan\n");
   // zero on success and non zero on failure
   if (ret) {
+    printf("1\n");
 	  app.processEvents();
 	  std::this_thread::sleep_for(std::chrono::milliseconds(5000));
 	  delete splash;
 	  return ret;
   }
-        
+     
   // none detected
   if (attysScan.getNAttysDevices()<1) {
+    printf("2\n");
 	  printf("No Attys present or not paired.\n");
 	  splash->showMessage("Cound not connect\nand/or no devices paired.");
 	  app.processEvents();
@@ -48,7 +50,13 @@ int main(int argc, char **argv)
   }
 
   MainWindow mainWindow;
+
+ // mainWindow.setObjectName("MainWindow");
+ // mainWindow.setStyleSheet("#MainWindow{background-image:url(sky.jpg); background-position: center;color: black;}");
+
+  printf("MainWindow\n");
   mainWindow.show();
+  printf("mainWindowShow\n");
   splash->finish(&mainWindow);
 
   return app.exec();

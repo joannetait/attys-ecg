@@ -10,9 +10,6 @@
  *   (at your option) any later version.                                   *
  ***************************************************************************/
 
-
-
-//TODO ANIMATIONS HERE//
 #ifndef ATTYS_ECG
 #define ATTYS_ECG
 
@@ -22,21 +19,22 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QLabel>
+#include <QApplication>
 
 #include "AttysComm.h"
 #include "AttysScan.h"
 #include <qwt_counter.h>
 #include <qwt_plot_marker.h>
-
+#include "radial_gradient.h"
 #include <mutex>
 
+#include "dialog.h"
 #include "dataplot.h"
 #include "ecg_rr_det.h"
 #include <Iir.h>
 #include <Fir1.h>
 
 #define IIRORDER 2
-
 
 // LMS coefficients
 #define HP_CUTOFF 0.25
@@ -49,28 +47,34 @@ class MainWindow : public QWidget
   Q_OBJECT
     
   // show the raw serai data here
-  DataPlot *dataPlotI;
-  DataPlot *dataPlotII;
+ // DataPlot *dataPlotI;
+ // DataPlot *dataPlotII;
   DataPlot *dataPlotIII;
   DataPlot *dataPlotBPM;
+  DataPlot *dataPlotHRV;
 
-  DataPlot *dataPlotAccX;
-  DataPlot *dataPlotAccY;
-  DataPlot *dataPlotAccZ;
+  RadialGradient* circle;
+  Dialog* manifest;
 
-  HRV *HRV;
+
+ // DataPlot *dataPlotAccX;
+ // DataPlot *dataPlotAccY;
+ // DataPlot *dataPlotAccZ;
 
   double minAcc;
   double maxAcc;
 
   double I,II,III;
   double aVR,aVL,aVF;
+  float bpm_1 = 0;
+  int tempBPMMM = 0;
 
-  double bpm;
-  double prevbpm;
-  double hrv; 
-  
+  double RRdiff;
+  double t_prev = 0;
 
+  int n=1; //counter for RMS hrv calc
+  double accumulator = 0;
+  float hrv;
 
   double accX, accY, accZ;
   
@@ -80,7 +84,7 @@ class MainWindow : public QWidget
   // time counter
   long unsigned int sampleNumber = 0;
 
-  Iir::Butterworth::BandStop<IIRORDER> iirnotch1hasRpeak;
+  Iir::Butterworth::BandStop<IIRORDER> iirnotch1;
   Iir::Butterworth::HighPass<IIRORDER> iirhp1;
 
   Iir::Butterworth::BandStop<IIRORDER> iirnotch2;
@@ -102,10 +106,14 @@ class MainWindow : public QWidget
 
   QPushButton* recordECG;
   QPushButton* clearBPM;
+  QPushButton* clearHRV;
   QPushButton* saveECG;
+  QPushButton* START;
+  QPushButton* STARTmanifest;
   QComboBox* notchFreq;
   QLabel* statusLabel;
   QLabel* bpmLabel;
+  QLabel* hrvLabel;
   QComboBox* yRange;
   QCheckBox* lmsCheckBox;
 
@@ -114,12 +122,16 @@ class MainWindow : public QWidget
 private slots:
 
   // actions:
+  void slotSTART();
+  void slotSTARTmanifest();
   void slotClearBPM();
+  void slotClearHRV();
   void slotRecordECG();
   void slotSaveECG();
   void slotSelectNotchFreq(int);
   void slotSelectYrange(int);
 
+  //NEW WINDOW BUTTON HERE
 protected:
 
   /// timer to plot the data
@@ -143,15 +155,17 @@ protected:
 		  det = _det;
 	  };
 	  void hasRpeak(long samplenumber,
+      float t,
 			float bpm,
 			double amplitude,
 			double confidence) {
-		  mainwindow->hasRpeak(det,samplenumber,bpm,amplitude,confidence);
+		  mainwindow->hasRpeak(det,samplenumber,t,bpm,amplitude,confidence);
 	  };
   };
 
   void hasRpeak(ECG_rr_det* det,
 		long samplenumber,
+    float t,
 		float bpm,
 		double amplitude,
 		double confidence);

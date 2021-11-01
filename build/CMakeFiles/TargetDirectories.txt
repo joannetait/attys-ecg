@@ -1,3 +1,0 @@
-/home/jojo/Documents/GitHub/attys-ecg/build/CMakeFiles/edit_cache.dir
-/home/jojo/Documents/GitHub/attys-ecg/build/CMakeFiles/rebuild_cache.dir
-/home/jojo/Documents/GitHub/attys-ecg/build/CMakeFiles/attys-ecg.dir
