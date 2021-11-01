@@ -468,7 +468,7 @@ void MainWindow::slotSTART()
   //declare here maybe??
   circle->resize(500, 500);  
   circle->setWindowTitle("ATTYS ECG breathe");
-  dataPlotIII->hide();
+ // dataPlotIII->hide();
   circle->show();
   //std::system("./windows/radialgradient/radialgradient");
 
