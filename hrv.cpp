@@ -1,5 +1,0 @@
-/*
-
-#include "attys-ecg.h"
-
-
